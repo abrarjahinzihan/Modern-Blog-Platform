@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ==========================================================================
+   THE CHRONICLE - Editorial Stylesheet
+   Typographic Hierarchy, Fluid Layouts, Sepia/Night Modes & Micro-Animations
+   ========================================================================== */
+
+:root {
+  --reading-progress: 0%;
+  --masthead-bg: #fbfbf9;
+  --editorial-ink: #18181b;
+  --editorial-paper: #faf8f5;
+  --editorial-accent: #e11d48;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* --------------------------------------------------------------------------
+   Sepia Reading Theme Mode
+   -------------------------------------------------------------------------- */
+html.sepia,
+html.sepia body {
+  background-color: #f7f1e3 !important;
+  color: #3b2f21 !important;
+}
+
+html.sepia header,
+html.sepia .bg-white,
+html.sepia footer,
+html.sepia #article-reader-modal #modal-container-window,
+html.sepia #author-modal .bg-white,
+html.sepia #subscription-modal .bg-white,
+html.sepia #skills-modal .bg-white {
+  background-color: #fdfaf3 !important;
+  border-color: #e6dac1 !important;
+  color: #3b2f21 !important;
+}
+
+html.sepia .article-card {
+  background-color: #fdfaf3 !important;
+  border-color: #e6dac1 !important;
+}
+
+html.sepia .border-stone-200,
+html.sepia .border-stone-100 {
+  border-color: #e8ddc7 !important;
+}
+
+html.sepia .text-stone-900 {
+  color: #2b1f13 !important;
+}
+
+html.sepia .text-stone-600,
+html.sepia .text-stone-500 {
+  color: #5c4b37 !important;
+}
+
+html.sepia .article-body {
+  color: #382a1b !important;
+}
+
+/* --------------------------------------------------------------------------
+   Typographic Polish & Editorial Flourishes
+   -------------------------------------------------------------------------- */
+
+.font-editorial-serif {
+  font-family: 'Newsreader', 'Lora', Georgia, serif;
+  font-feature-settings: "liga" 1, "dlig" 1, "kern" 1;
+}
+
+.font-display-serif {
+  font-family: 'Instrument Serif', 'Newsreader', serif;
+  letter-spacing: -0.02em;
+}
+
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Editorial Drop Cap in Articles */
+.article-lead::first-letter {
+  float: left;
+  font-family: 'Instrument Serif', 'Newsreader', serif;
+  font-size: 5.5rem;
+  line-height: 0.76;
+  padding-top: 6px;
+  padding-right: 14px;
+  padding-bottom: 2px;
+  color: #0f172a;
+  font-weight: 400;
+}
+
+.dark .article-lead::first-letter {
+  color: #f8fafc;
+}
+
+/* Article Prose Typography Rules */
+.article-body {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.215rem;
+  line-height: 1.82;
+  color: #27272a;
+}
+
+.dark .article-body {
+  color: #d4d4d8;
+}
+
+.article-body p {
+  margin-bottom: 1.65rem;
+}
+
+.article-body h2 {
+  font-family: 'Newsreader', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 2.75rem;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.02em;
+  color: #09090b;
+}
+
+.dark .article-body h2 {
+  color: #fafafa;
+}
+
+.article-body h3 {
+  font-family: 'Newsreader', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  color: #18181b;
+}
+
+.dark .article-body h3 {
+  color: #f4f4f5;
+}
+
+.article-body blockquote {
+  position: relative;
+  margin: 2.5rem 0;
+  padding: 1.25rem 2rem 1.25rem 2.25rem;
+  border-left: 3px solid #e11d48;
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-size: 1.45rem;
+  line-height: 1.55;
+  color: #18181b;
+  background: rgba(225, 29, 72, 0.03);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.dark .article-body blockquote {
+  border-left-color: #fb7185;
+  color: #f4f4f5;
+  background: rgba(251, 113, 133, 0.06);
+}
+
+.article-body blockquote cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  font-style: normal;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #71717a;
+  letter-spacing: 0.02em;
+}
+
+.dark .article-body blockquote cite {
+  color: #a1a1aa;
+}
+
+.article-body ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.article-body ul li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-body ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #e11d48;
+  font-weight: 700;
+}
+
+.dark .article-body ul li::before {
+  color: #fb7185;
+}
+
+.article-body pre {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  background: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #f4f4f5;
+}
+
+.article-body code:not(pre code) {
+  padding: 0.2rem 0.45rem;
+  background: #f1f5f9;
+  color: #e11d48;
+  border-radius: 0.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+}
+
+.dark .article-body code:not(pre code) {
+  background: #1e293b;
+  color: #fda4af;
+}
+
+.editorial-callout {
+  margin: 2.25rem 0;
+  padding: 1.5rem 1.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(225, 29, 72, 0.25);
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.04) 0%, rgba(244, 63, 94, 0.08) 100%);
+}
+
+.dark .editorial-callout {
+  border-color: rgba(251, 113, 133, 0.3);
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.12) 0%, rgba(244, 63, 94, 0.05) 100%);
+}
+
+.editorial-callout h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #be123c;
+  margin-bottom: 0.5rem;
+}
+
+.dark .editorial-callout h4 {
+  color: #fda4af;
+}
+
+.editorial-callout p {
+  margin-bottom: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Trending Large Numbers
+   -------------------------------------------------------------------------- */
+.trending-rank-number {
+  font-family: 'Instrument Serif', 'Newsreader', serif;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  color: #cbd5e1;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.dark .trending-rank-number {
+  color: #334155;
+}
+
+.trending-item:hover .trending-rank-number {
+  color: #e11d48;
+}
+
+/* --------------------------------------------------------------------------
+   Reading Progress Bar
+   -------------------------------------------------------------------------- */
+#reading-progress-bar {
+  width: var(--reading-progress, 0%);
+  transition: width 80ms ease-out;
+}
+
+/* --------------------------------------------------------------------------
+   Custom Animations & Keyframes
+   -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2.5s infinite ease-in-out;
+}
+
+@keyframes floatUpFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.3);
+  }
+}
+
+.floating-clap {
+  animation: floatUpFadeOut 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+/* Hover Zoom for Images */
+.card-image-wrap {
+  overflow: hidden;
+}
+
+.card-image-wrap img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.article-card:hover .card-image-wrap img,
+.featured-story:hover .card-image-wrap img {
+  transform: scale(1.05);
+}
+
+/* Text clamp helpers */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Interactive Pill Active State */
+.filter-tag.active {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.dark .filter-tag.active {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-color: #f8fafc;
+}
+
+/* Paper Grain Texture Overlay */
+.editorial-paper-texture {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.dark .editorial-paper-texture {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Elegant border glow for cards */
+.editorial-card-glow {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card-glow:hover {
+  box-shadow: 0 12px 32px -4px rgba(225, 29, 72, 0.09), 0 4px 16px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .editorial-card-glow:hover {
+  box-shadow: 0 12px 32px -4px rgba(251, 113, 133, 0.12), 0 4px 16px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Print Styles */
+@media print {
+  header, footer, #newsletter-section, #filter-bar, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
